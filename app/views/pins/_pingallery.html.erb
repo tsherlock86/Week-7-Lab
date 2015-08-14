@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div class"container">
+  <% @pins.each_slice(4) do |row| %>
+    <div class="row">
+      <% row.each do |pin| %>
+        <div class="col-xs-3">
+          <span><%= link_to image_tag(pin.image, :class => "img-responsive"), "#", "data-toggle" => "modal", "data-target" => "#myModal#{pin.id}" %></span>
+              <%= render :partial => "pins/pinimage", :layout => "pins/myModal", :locals => {:pin => pin} %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
