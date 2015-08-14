@@ -7,8 +7,9 @@ class PinsController < ApplicationController
     @pin = Pin.new
     @pins = Pin.all
       respond_to do |format|
-        format.html {:back}
         format.js {}
+        format.html {:back}
+
       end
   end
 
@@ -34,16 +35,14 @@ class PinsController < ApplicationController
   # POST /pins.json
   def create
     @pin = Pin.new(pin_params)
+    @pin.user_id = current_user.id
 
     respond_to do |format|
-      @pin.user_id = current_user.id
-
       if @pin.save
-        format.html { redirect_to :back, notice: 'Pin was successfully created.' }
-        format.json { render :show, status: :created, location: @pin }
+        # format.html { redirect_to :back, notice: 'Pin was successfully created.' }
+        format.js {}
       else
         format.html { render :back }
-        format.json { render json: @pin.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -73,23 +72,21 @@ class PinsController < ApplicationController
   end
 
   def upvote
-		@pin.upvote_by current_user
+    @pin = Pin.find(params[:id])
+    @pin.liked_by current_user
     @pin.save
 		redirect_to :back
 	end
 
   def downvote
-    @pin.downvote_by current_user
+    @pin = Pin.find(params[:id])
+    @pin.downvote_from current_user
     @pin.save
     redirect_to :back
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def score
-      @pin.get_upvotes.size - @pin.get_downvotes.size
-    end
-
 
     def set_pin
       @pin = Pin.find(params[:id])

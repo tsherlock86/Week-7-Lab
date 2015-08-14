@@ -1,3 +1,3 @@
 $("#myModal2").modal('hide');
-$("#pin_list").prepend("<%= escape_javascript(render :partial => "pin", :locals => {:pin => @pin}) %>");
+$("#pin_list").prepend("<%= escape_javascript(render :partial => 'pingallery', :locals => {:pins => Pin.all}) %>");
 resetForm($('#dropdown'));

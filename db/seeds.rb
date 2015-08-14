@@ -8,3 +8,7 @@
 User.create(email: "test@user.com",
             password: "password",
             password_confirmation: "password")
+
+User.create(email: "test2@user.com",
+password: "password",
+password_confirmation: "password")

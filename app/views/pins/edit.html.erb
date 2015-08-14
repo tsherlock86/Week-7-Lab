@@ -2,5 +2,9 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @pin %> |
+<%= link_to 'Show', @pin %>
+<%= link_to 'destroy', pin_path(@pin),
+                         :method => :delete,
+                         :data => { :confirm => 'Are you sure?'},
+                         :class => 'btn btn-xs btn-danger' %>
 <%= link_to 'Back', pins_path %>

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
   resources :pins do
     member do
-      post 'upvote', :as => :upvote
-      post 'downvote', :as => :downvote
+      put 'upvote', to: "pins#upvote", :as => :upvote
+      put 'downvote', to: "pins#downvote", :as => :downvote
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
