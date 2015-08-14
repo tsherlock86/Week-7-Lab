@@ -1,12 +1,19 @@
-<p id="notice"><%= notice %></p>
-
+<!-- Taken from http://www.bootply.com/xYrJxEyIbg -->
 <div class"container">
   <% @pins.each_slice(4) do |row| %>
     <div class="row">
       <% row.each do |pin| %>
         <div class="col-xs-3">
-          <span><%= link_to image_tag(pin.image, :class => "img-responsive"), "#", "data-toggle" => "modal", "data-target" => "#myModal#{pin.id}" %></span>
+          <div class="panel panel-default">
+            <div class="panel-thumbnail"><%= link_to image_tag(pin.image, :class => "img-responsive"), "#", "data-toggle" => "modal", "data-target" => "#myModal#{pin.id}" %>
               <%= render :partial => "pins/pinimage", :layout => "pins/myModal", :locals => {:pin => pin} %>
+            </div>
+            <div class="panel-body">
+              <p class="lead"><%= pin.title %></p>
+              <p><%= score %></p>
+              <p>Tags</p>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
