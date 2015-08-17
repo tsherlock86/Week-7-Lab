@@ -15,7 +15,8 @@ gem 'acts_as_votable'
 gem 'devise'
 gem 'faker', '~> 1.4.3'
 gem 'rails_12factor', group: :production
-gem 'acts-as-taggable-on', '~> 3.4'
+gem 'acts-as-taggable-on'
+gem 'kaminari'
 
 
 group :development, :test do

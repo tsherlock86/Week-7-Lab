@@ -6,11 +6,16 @@ class PinsController < ApplicationController
   def index
     @pin = Pin.new
     @pins = Pin.all
-      respond_to do |format|
-        format.js {}
-        format.html {:back}
-
-      end
+    # if params[:tag]
+    #   @pins = Pin.tagged_with(params[:tag]).page params[:page]
+    # else
+    #   @pins = Pin.all.page params[:page]
+    # end
+    #   respond_to do |format|
+    #     format.js {}
+    #     format.html {:back}
+    #
+    #   end
   end
 
   # GET /pins/1
@@ -20,11 +25,11 @@ class PinsController < ApplicationController
 
   # GET /pins/new
   def new
+    @pins = Pin.new
     @pin = Pin.new
-    respond_to do |format|
-     format.html {}
-     format.htm {layout false}
-   end
+      respond_to do |format|
+       format.html {}
+      end
   end
 
   # GET /pins/1/edit
@@ -74,15 +79,19 @@ class PinsController < ApplicationController
   def upvote
     @pin = Pin.find(params[:id])
     @pin.liked_by current_user
-    @pin.save
 		redirect_to :back
 	end
 
   def downvote
     @pin = Pin.find(params[:id])
     @pin.downvote_from current_user
-    @pin.save
     redirect_to :back
+  end
+
+  # Used a short tutorial to help me get start http://alexmuraro.me/posts/acts-as-taggable-on-a-short-tutorial/.
+  def tag
+    @pins = Pin.tagged_with(params[:id])
+    render :index
   end
 
   private
@@ -94,6 +103,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:title, :image, :user_id)
+      params.require(:pin).permit(:title, :image, :user_id, :tag_list)
     end
 end

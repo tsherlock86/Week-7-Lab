@@ -1,0 +1,10 @@
+<div class="panel-body">
+  <p class="lead"><%= gif.title %></p>
+  <p><%= pluralize(gif.votes_for.size, "vote") %></p>
+  <p>
+    <% gif.tags.any? %>
+      <% gif.tags.each do |tag| %>
+        <%= link_to tag.name, tags_path(tag.name) %>
+      <% end %>
+  </p>
+</div>

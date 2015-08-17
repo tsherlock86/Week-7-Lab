@@ -1,5 +1,6 @@
-<%= bootstrap_form_for @pin, :remote => true do |f| %>
-<% if @pin.errors.any? %>
+<%= bootstrap_form_for @pins = Pin.new, :remote => true do |f| %>
+
+<% if @pins.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@pin.errors.count, "error") %>
     prohibited this pin from being saved:</h2>
@@ -9,7 +10,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.text_field :image, :value => @pin.image || "http://" %>
+    <%= f.text_field :image, :value => @pins.image || "http://" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :tag_list %>
   </div>
   <div class="actions">
     <%= f.submit %>

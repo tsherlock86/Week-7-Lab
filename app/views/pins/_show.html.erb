@@ -1,0 +1,38 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal<%= gif.id %>" role="dialog">
+  <div class="modal-dialog">
+
+<!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel"><%= gif.title %></h4>
+      </div>
+      <div class="modal-body">
+        <%= image_tag(gif.image) %>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline">
+          <li><%= time_ago_in_words(gif.created_at) %>
+            ago by
+            <%= gif.user.email %></li>
+        </ul>
+        <div classe="well"><%= gif.image %></div>
+        <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_pin_path(gif), class: "btn btn-default btn-sm" %>
+        <div class="btn-group">
+          <%= link_to upvote_pin_path(gif), method: :put, class: "btn btn-default btn-sm" do %>
+          <span class="glyphicon glyphicon-chevron-up"></span>
+          <% end %>
+          <%= link_to downvote_pin_path(gif), method: :put, class: "btn btn-default btn-sm" do %>
+          <span class="glyphicon glyphicon-chevron-down">
+            <% end %>
+          </div>
+          <% end %>
+          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

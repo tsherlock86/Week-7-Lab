@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  get 'pins/tagged/:id' => 'pins#tag', :as => :tags
+
+  devise_for :users do
+    resources :pins
+  end
 
   resources :pins do
     member do
@@ -8,6 +12,8 @@ Rails.application.routes.draw do
       put 'downvote', to: "pins#downvote", :as => :downvote
     end
   end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
