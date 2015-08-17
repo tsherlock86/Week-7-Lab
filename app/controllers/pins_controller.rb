@@ -6,16 +6,16 @@ class PinsController < ApplicationController
   def index
     @pin = Pin.new
     @pins = Pin.all
-    # if params[:tag]
-    #   @pins = Pin.tagged_with(params[:tag]).page params[:page]
-    # else
-    #   @pins = Pin.all.page params[:page]
-    # end
-    #   respond_to do |format|
-    #     format.js {}
-    #     format.html {:back}
-    #
-    #   end
+    if params[:tag]
+      @pins = Pin.tagged_with(params[:tag]).page params[:page]
+    else
+      @pins = Pin.all.page params[:page]
+    end
+      respond_to do |format|
+        format.js {}
+        format.html {:back}
+
+      end
   end
 
   # GET /pins/1

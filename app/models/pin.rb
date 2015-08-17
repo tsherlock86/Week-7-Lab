@@ -3,7 +3,7 @@ class Pin < ActiveRecord::Base
   belongs_to :user
   acts_as_taggable
   acts_as_votable
-  # validates :image, allow_blank: true, format: { with: %r{.(gif)\z}, message: 'Image must be a .gif image.' }
+  validates :image, allow_blank: true, format: { with: %r{.(gif)\z}, message: 'Image must be a .gif image.' }
 
 
   def score
