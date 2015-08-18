@@ -11,6 +11,7 @@
   </div>
   <div class="field">
     <%= f.text_field :image, :value => @pins.image || "http://" %>
+    <%= f.attachment_field :file %>
   </div>
   <div class="field">
     <%= f.text_field :tag_list %>

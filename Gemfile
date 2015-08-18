@@ -17,6 +17,10 @@ gem 'faker', '~> 1.4.3'
 gem 'rails_12factor', group: :production
 gem 'acts-as-taggable-on'
 gem 'kaminari'
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
+gem "remotipart"
+gem 'refile-postgres'
 
 
 group :development, :test do

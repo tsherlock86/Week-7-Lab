@@ -1,6 +1,6 @@
-<div class="panel-body">
+<div class="panel-body" id="updatescore">
   <p class="lead"><%= gif.title %></p>
-  <p><%= pluralize(gif.votes_for.size, "vote") %></p>
+  <p><%= pluralize(gif.score, "vote") %></p>
   <p>
     <% gif.tags.any? %>
       <% gif.tags.each do |tag| %>

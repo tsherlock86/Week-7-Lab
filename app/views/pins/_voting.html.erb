@@ -1,0 +1,20 @@
+<div class="modal-footer" id="votebase">
+  <ul class="list-inline">
+    <li><%= time_ago_in_words(gif.created_at) %>
+      ago by
+      <%= gif.user.email %></li>
+  </ul>
+  <div classe="well"><%= gif.image || gif.file %></div>
+  <% if user_signed_in? %>
+  <%= link_to 'Edit', edit_pin_path(gif), class: "btn btn-default btn-sm" %>
+  <div class="btn-group">
+    <%= button_to upvote_pin_path(gif), class: "btn btn-default btn-sm", remote: true do %>
+    <span class="glyphicon glyphicon-chevron-up"> Upvote</span>
+    <% end %>
+    <%= button_to downvote_pin_path(gif), class: "btn btn-default btn-sm", remote: true do %>
+    <span class="glyphicon glyphicon-chevron-down"> Downvote </span>
+      <% end %>
+    </div>
+    <% end %>
+    <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+  </div>
