@@ -12,8 +12,8 @@
 
 
   10.times do
-    Pins.create(image: "http://media.giphy.com/media/wVJOkiGy2AYIE/giphy.gif")
-    squawk.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
+    Pins.create(image: "http://media.giphy.com/media/wVJOkiGy2AYIE/giphy.gif", user_id )
+
     user.pins << pin
 
     Pins.create(image: "http://media.giphy.com/media/tKNa3xBeOPDVe/giphy.gif")

@@ -1,3 +1,9 @@
 <div class="panel panel-default">
-  <div class="panel-thumbnail"><%= link_to image_tag(gif.image, :class => "img-responsive"), "#", "data-toggle" => "modal", "data-target" => "#myModal#{gif.id}" %>
-  </div>
+    <% if gif.file.blank? %>
+      <div class="panel-thumbnail"><%= link_to image_tag(gif.image, :class => "img-responsive"), "#", "data-toggle" => "modal", "data-target" => "#myModal#{gif.id}" %>
+      </div>
+    <% else %>
+      <div class="panel-thumbnail"><%= link_to image_tag(attachment_url(gif, :file), :class => "img-responsive"), "#", "data-toggle" => "modal", "data-target" => "#myModal#{gif.id}" %>
+      </div>
+    <% end %>
+</div>

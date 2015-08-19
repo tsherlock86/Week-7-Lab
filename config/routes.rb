@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   resources :pins do
     member do
-      put 'upvote', to: "pins#upvote", :as => :upvote
-      put 'downvote', to: "pins#downvote", :as => :downvote
+      post 'upvote', to: "pins#upvote", :as => :upvote
+      post 'downvote', to: "pins#downvote", :as => :downvote
     end
   end
 
