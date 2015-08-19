@@ -1,22 +1,40 @@
-<%= bootstrap_form_for @pins = Pin.new, :remote => true do |f| %>
 
-<% if @pins.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@pin.errors.count, "error") %>
-    prohibited this pin from being saved:</h2>
-  <% end %>
 
-  <div class="field">
-    <%= f.text_field :title %>
+
+<div class="modal fade" id="myModalform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">A New Pin</h4>
+      </div>
+      <div class="modal-body">
+        <%= bootstrap_form_for @pins = Pin.new, :remote => true do |f| %>
+
+          <% if @pins.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@pin.errors.count, "error") %>
+                prohibited this pin from being saved:</h2>
+          <% end %>
+
+          <div class="field">
+            <%= f.text_field :title %>
+          </div>
+          <div class="field">
+            <%= f.text_field :image, :value => @pins.image || "http://" %>
+            <%= f.attachment_field :file %>
+          </div>
+          <div class="field">
+            <%= f.text_field :tag_list %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.text_field :image, :value => @pins.image || "http://" %>
-    <%= f.attachment_field :file %>
-  </div>
-  <div class="field">
-    <%= f.text_field :tag_list %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  <% end %>
+</div>
