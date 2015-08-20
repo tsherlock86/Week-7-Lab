@@ -14,7 +14,6 @@ class PinsController < ApplicationController
       respond_to do |format|
         format.js {}
         format.html {:back}
-
       end
   end
 
@@ -42,15 +41,15 @@ class PinsController < ApplicationController
     @pin = Pin.new(pin_params)
     @pin.user_id = current_user.id
 
-      if @pin.save
-          respond_to do |format|
-            format.js {}
-          end
-      else
-          respond_to do |format|
-            format.js { render :new }
-          end
+    if @pin.save
+      respond_to do |format|
+        format.js {}
       end
+    else
+      respond_to do |format|
+        format.js { render :new }
+      end
+    end
   end
 
   # PATCH/PUT /pins/1
@@ -91,7 +90,8 @@ class PinsController < ApplicationController
     end
   end
 
-  # Used a short tutorial to help me get start http://alexmuraro.me/posts/acts-as-taggable-on-a-short-tutorial/.
+
+  # Used a short tutorial to help me get started http://alexmuraro.me/posts/acts-as-taggable-on-a-short-tutorial/.
   def tag
     @pins = Pin.tagged_with(params[:id])
     render :index

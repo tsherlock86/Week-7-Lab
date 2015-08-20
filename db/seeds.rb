@@ -5,63 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-10.times do
-  user = User.create(email: Faker::Internet.email,
+    User.create(email: "test@user",
               password: "password",
-              password_confirmation: "password",
+              password_confirmation: "password")
 
 
-  10.times do
-    Pins.create(image: "http://media.giphy.com/media/wVJOkiGy2AYIE/giphy.gif", user_id )
-
-    user.pins << pin
-
-    Pins.create(image: "http://media.giphy.com/media/tKNa3xBeOPDVe/giphy.gif")
-    squawk.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
-    user.pins << pin
-
-    Pins.create(image: "http://media.giphy.com/media/13hNDbv34oogCc/giphy.gif")
-    squawk.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
-    user.pins << pin
-
-    Pins.create(image: "http://media.giphy.com/media/FKzUvE0VjW1fq/giphy.gif")
-    squawk.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
-    user.pins << pin
-
-    Pins.create(image: "http://media.giphy.com/media/zHhOWwac0lPR6/giphy.gif")
-    squawk.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
-    user.pins << pin
-
-    Pins.create(image: "http://media.giphy.com/media/XcTFzOcRuoQ6Y/giphy.gif")
-    squawk.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
-    user.pins << pin
-
-    Pins.create(image: "http://i.imgur.com/CqGoEKa.gif")
-    squawk.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
-    user.pins << pin
-
-    Pins.create(image: "http://media.giphy.com/media/bqKHVb9Vltu6c/giphy.gif")
-    squawk.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
-    user.pins << pin
-
-    Pins.create(image: "http://media.giphy.com/media/6mcB2tqIWuV3O/giphy.gif")
-    squawk.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
-    user.pins << pin
-
-    Pins.create(image: Faker::Lorem.sentence(5))
-    squawk.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
-    user.pins << pin
+    Pins.create(image: "http://media.giphy.com/media/tKNa3xBeOPDVe/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "hhttp://media.giphy.com/media/2ZOfyDFZGuat2/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "https://media.giphy.com/media/bqKHVb9Vltu6c/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "http://media.giphy.com/media/cLtvKDcQYkSRO/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "http://media.giphy.com/media/77EJElk3gnq0M/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "https://media.giphy.com/media/JyeJQABlkPohW/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "https://media.giphy.com/media/dkjgw5RD13gRi/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "https://media.giphy.com/media/R7j5OpXWq1i8M/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "http://media.giphy.com/media/3o85xEdppSq2M95CPC/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "https://media.giphy.com/media/8U2TdDCDtxQdy/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "https://media.giphy.com/media/xTiTnud0mno9BMF5vi/giphy.gif", user_id: 1, created_at: Time.now)
+    Pins.create(image: "http://giphy.com/gifs/steve-carell-anchorman-movie-WywrPwDi0wDIY", user_id: 1, created_at: Time.now)
 
 
-  end
 
-end
-
-
-User.create(email: "test@user.com",
-            password: "password",
-            password_confirmation: "password")
-
-User.create(email: "test2@user.com",
-password: "password",
-password_confirmation: "password")
+    User.create(email: "test2@user.com",
+    password: "password",
+    password_confirmation: "password")

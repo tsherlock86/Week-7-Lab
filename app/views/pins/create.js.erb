@@ -1,3 +1,4 @@
-$("#myModal2").modal('hide');
+$('.modal-backdrop').open();
+$("#myModal").modal('hide');
 $("#pin_list").prepend('<%=escape_javascript(render :partial => 'pinrow', :locals => {:pin => [@pin]}) %>');
-resetForm($('#dropdown'));
+resetForm($('#form'));

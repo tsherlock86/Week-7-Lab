@@ -1,7 +1,10 @@
 require 'test_helper'
+require 'rspec/rails'
+require 'shoulda/matchers'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  should have_many(:pins)
+
+
 end

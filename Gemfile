@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
 gem 'rails', '4.2.3'
 gem 'pg'
@@ -21,9 +22,15 @@ gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem "remotipart"
 gem 'refile-postgres'
+gem 'factory_girl'
 
 
 group :development, :test do
+  gem 'poltergeist'
+  gem 'capybara'
+  gem 'shoulda'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers', require: false
   gem 'byebug'
   gem 'pry-byebug'
   gem 'web-console', '~> 2.0'
