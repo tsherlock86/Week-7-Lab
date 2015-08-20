@@ -2,5 +2,4 @@
   <% @pins.each_slice(4) do |pin| %>
     <%= render partial: 'pinrow', :locals => {:pin => pin} %>
   <% end %>
-    <%= render :partial => "pins/form", :locals => {:title => "New Pin", :id => "NewPin"} %>
 </div>

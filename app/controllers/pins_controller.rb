@@ -24,7 +24,6 @@ class PinsController < ApplicationController
 
   # GET /pins/new
   def new
-    @pins = Pin.new
     @pin = Pin.new
       respond_to do |format|
        format.html {}
@@ -41,7 +40,7 @@ class PinsController < ApplicationController
     @pin = Pin.new(pin_params)
     @pin.user_id = current_user.id
 
-    if @pin.save
+    if @pin.save!
       respond_to do |format|
         format.js {}
       end
@@ -86,7 +85,7 @@ class PinsController < ApplicationController
   def downvote
     @pin.downvote_from current_user
     respond_to do |format|
-      format.js{}
+      format.js{ render 'upvote.js'}
     end
   end
 
@@ -106,6 +105,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:title, :image, :tag_list, :file)
+      params.require(:pin).permit(:title, :image, :tag_list, :file_id)
     end
 end

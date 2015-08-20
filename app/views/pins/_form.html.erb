@@ -9,9 +9,9 @@
         <h4 class="modal-title" id="myModalLabel">A New Pin</h4>
       </div>
       <div class="modal-body">
-        <%= bootstrap_form_for @pins = Pin.new, :remote => true do |f| %>
+        <%= bootstrap_form_for @pin, :remote => true do |f| %>
 
-          <% if @pins.errors.any? %>
+          <% if @pin.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(@pin.errors.count, "error") %>
                 prohibited this pin from being saved:</h2>
@@ -21,7 +21,7 @@
             <%= f.text_field :title %>
           </div>
           <div class="field">
-            <%= f.text_field :image, :value => @pins.image || "http://" %>
+            <%= f.text_field :image, :placeholder => "http://" %>
             <%= f.attachment_field :file %>
           </div>
           <div class="field">

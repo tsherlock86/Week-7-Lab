@@ -21,8 +21,10 @@ gem 'kaminari'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem "remotipart"
-gem 'refile-postgres'
+gem 'refile-s3'
 gem 'factory_girl'
+gem 'pg'
+gem 'figaro'
 
 
 group :development, :test do
