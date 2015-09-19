@@ -10,18 +10,18 @@
               password_confirmation: "password")
 
 
-    Pins.create(image: "http://media.giphy.com/media/tKNa3xBeOPDVe/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "hhttp://media.giphy.com/media/2ZOfyDFZGuat2/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "https://media.giphy.com/media/bqKHVb9Vltu6c/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "http://media.giphy.com/media/cLtvKDcQYkSRO/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "http://media.giphy.com/media/77EJElk3gnq0M/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "https://media.giphy.com/media/JyeJQABlkPohW/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "https://media.giphy.com/media/dkjgw5RD13gRi/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "https://media.giphy.com/media/R7j5OpXWq1i8M/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "http://media.giphy.com/media/3o85xEdppSq2M95CPC/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "https://media.giphy.com/media/8U2TdDCDtxQdy/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "https://media.giphy.com/media/xTiTnud0mno9BMF5vi/giphy.gif", user_id: 1, created_at: Time.now)
-    Pins.create(image: "http://giphy.com/gifs/steve-carell-anchorman-movie-WywrPwDi0wDIY", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "http://media.giphy.com/media/tKNa3xBeOPDVe/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "http://media.giphy.com/media/2ZOfyDFZGuat2/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "https://media.giphy.com/media/bqKHVb9Vltu6c/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "http://media.giphy.com/media/cLtvKDcQYkSRO/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "http://media.giphy.com/media/77EJElk3gnq0M/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "https://media.giphy.com/media/JyeJQABlkPohW/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "https://media.giphy.com/media/dkjgw5RD13gRi/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "https://media.giphy.com/media/R7j5OpXWq1i8M/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "http://media.giphy.com/media/3o85xEdppSq2M95CPC/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "https://media.giphy.com/media/8U2TdDCDtxQdy/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "https://media.giphy.com/media/xTiTnud0mno9BMF5vi/giphy.gif", user_id: 1, created_at: Time.now)
+    Pin.create(Faker::Name.title, image: "http://giphy.com/gifs/steve-carell-anchorman-movie-WywrPwDi0wDIY", user_id: 1, created_at: Time.now)
 
 
 

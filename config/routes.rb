@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   get 'pins/tagged/:id' => 'pins#tag', :as => :tags
 
-  devise_for :users do
-    resources :pins
-  end
+  devise_for :users, controllers: {
+  registrations: 'users/registrations',
+  sessions: 'users/sessions'
+  }
+
 
   resources :pins do
     member do

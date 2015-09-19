@@ -2,7 +2,7 @@
   <ul class="list-inline">
     <li><%= time_ago_in_words(gif.created_at) %> ago by <%= gif.user.email %></li>
   </ul>
-  <div classe="well"><%= gif.image || gif.file %></div>
+  <div classe="well"><%= gif.image || attachment_url(gif, :file) %></div>
   <% if user_signed_in? %>
     <%= link_to 'Edit', edit_pin_path(gif), class: "btn btn-default btn-sm" %>
       <div class="btn-group">
@@ -20,13 +20,6 @@
           <% end %>
           <%= button_to downvote_pin_path(gif), class: "btn btn-default btn-sm", remote: true do %>
             <li class="disabled"><i class="glyphicon glyphicon-chevron-down"> Downvote </i></li>
-          <% end %>
-        <% elsif !current_user.voted?(gif) %>
-          <%= button_to upvote_pin_path(gif), class: "btn btn-default btn-sm", remote: true do %>
-            <li class="glyphicon glyphicon-chevron-up"> Upvote</li>
-          <% end %>
-          <%= button_to downvote_pin_path(gif), class: "btn btn-default btn-sm", remote: true do %>
-            <li class="glyphicon glyphicon-chevron-down"> Downvote </li>
           <% end %>
         <% else %>
           <%= button_to upvote_pin_path(gif), class: "btn btn-default btn-sm", remote: true do %>

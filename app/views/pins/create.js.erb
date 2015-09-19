@@ -1,4 +1,4 @@
+$("#pin_list").prepend('<%=escape_javascript(render :partial => 'pinrow', :locals => {:pin => [@pin]}) %>');
+resetForm($('#myModalform'));
 $('.modal-backdrop').open();
 $("#myModal").modal('hide');
-$("#pin_list").prepend('<%=escape_javascript(render :partial => 'pinrow', :locals => {:pin => [@pin]}) %>');
-resetForm($('#form'));

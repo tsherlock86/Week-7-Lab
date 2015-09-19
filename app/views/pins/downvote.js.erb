@@ -1,4 +1,4 @@
+$('.modal-backdrop').hide();
+$('.modal').modal('hide');
 $('#votebase').html('<%= escape_javascript( render :partial => "pins/voting", :locals => {:gif => @pin}) %>');
 $("#pin_list").html('<%=escape_javascript(render :partial => "pinrow", :locals => {:pin => Pin.all}) %>');
-$('.modal').modal('hide');
-$('.modal-backdrop').hide();

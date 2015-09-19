@@ -1,1 +1,1 @@
-$('#updatescore').html('<%= escape_javascript( render :layout => "pins/show", :locals => {:gif => @pins}) %>');
+$('#updatescore').html('<%= escape_javascript( render :layout => "pins/show", :locals => {:pin => Pin.all}) %>');
